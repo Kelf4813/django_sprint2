@@ -18,13 +18,13 @@
             Дата: {{ post.date }}
           </li>
           <li>
-            Категория: <a href="{{ post.category }}">{{ post.category }}</a>
+            Категория: <a href="category/{{ post.category }}">{{ post.category }}</a>
           </li>
         </ul>
         <p>
           {{ post.text|truncatewords:10 }}
         </p>
-        <a href="detail.html">Читать полный текст</a>
+        <a href="posts/{{ forloop.counter0 }}">Читать полный текст</a>
       </article>
     {% endfor %}
   </div>

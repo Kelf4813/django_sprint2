@@ -50,8 +50,9 @@ def index(requests):
     return render(requests, 'blog/index.html', context)
 
 
-def post_detail(requests):
-    return render(requests, 'blog/detail.html')
+def post_detail(requests, id):
+    context = [post for post in posts if post['id'] == id][0]
+    return render(requests, 'blog/detail.html', context)
 
 
 def category_posts(requests, category_slug):
